@@ -9,9 +9,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 function AddItem(props) {
     const [open, setOpen] = useState(false);
-    const[item, setItem] = useState({
-        product:'',
-        amount:''
+    const [item, setItem] = useState({
+        product: '',
+        amount: ''
     })
     const handleOpen = () => {
         setOpen(true)
@@ -31,7 +31,12 @@ function AddItem(props) {
                 </DialogTitle>
 
                 <DialogContent>
-
+                    <TextField value={item.product} margin="dense"
+                        onChange={handleChange} name="product"
+                        label="Product" fullWidth />
+                    <TextField value={item.amount} margin="dense"
+                        onChange={handleChange} name="amount"
+                        label="Amount" fullWidth />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>
