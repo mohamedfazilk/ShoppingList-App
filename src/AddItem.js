@@ -19,6 +19,20 @@ function AddItem(props) {
     const handleClose = () => {
         setOpen(false)
     }
+
+    const handleChange = (e) => {
+        setItem({ ...item, [e.target.name]: e.target.value })
+    }
+
+    const addItem = () => {
+        props.addItem(item);
+        setItem({
+            product: '',
+            amount: '',
+
+        })
+        handleClose()
+    }
     return (
 
         <div>
